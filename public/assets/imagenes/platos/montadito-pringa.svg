@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="pringaBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#241B15"/><stop offset="100%" stop-color="#0D0907"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#pringaBg)"/>
+  <ellipse cx="400" cy="400" rx="300" ry="140" fill="#E7E5E4" stroke="#D6D3D1" stroke-width="3"/>
+  <!-- Pan de mollete andaluz -->
+  <path d="M 250,370 C 240,290 320,260 400,260 C 480,260 560,290 550,370 C 520,380 480,385 400,385 C 320,385 280,380 250,370 Z" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+  <!-- Relleno abundante de pringá casera -->
+  <path d="M 270,365 C 320,360 480,360 530,365 C 525,410 475,415 400,415 C 325,415 275,410 270,365 Z" fill="#7F1D1D"/>
+  <circle cx="340" cy="385" r="10" fill="#991B1B"/>
+  <circle cx="430" cy="390" r="12" fill="#451A03"/>
+  <circle cx="480" cy="380" r="9" fill="#991B1B"/>
+  <!-- Base de mollete -->
+  <path d="M 260,395 C 320,400 480,400 540,395 C 530,440 470,445 400,445 C 330,445 270,440 260,395 Z" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+  <text x="400" y="530" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#F5F5F4" text-anchor="middle">Montadito de Pringá Casera</text>
+</svg>

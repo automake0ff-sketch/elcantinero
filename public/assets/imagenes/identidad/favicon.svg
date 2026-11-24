@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1815" />
+      <stop offset="100%" stop-color="#0E0D0B" />
+    </linearGradient>
+    <linearGradient id="croqFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="50%" stop-color="#E5A93C" />
+      <stop offset="100%" stop-color="#92400E" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bgFav)" stroke="#E5A93C" stroke-width="2"/>
+  <ellipse cx="32" cy="34" rx="20" ry="14" fill="url(#croqFav)" stroke="#78350F" stroke-width="1.5"/>
+  <circle cx="27" cy="31" r="1.5" fill="#FFFBEB"/>
+  <circle cx="36" cy="33" r="1.8" fill="#FFFBEB"/>
+  <circle cx="31" cy="38" r="1.5" fill="#451A03"/>
+  <path d="M 28,15 Q 31,10 28,6" stroke="#E5A93C" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M 36,17 Q 39,11 36,7" stroke="#E5A93C" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+</svg>

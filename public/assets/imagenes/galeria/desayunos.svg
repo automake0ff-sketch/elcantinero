@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="desBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D1C13"/><stop offset="100%" stop-color="#140C07"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#desBg)"/>
+  <!-- Taza de café con leche humeante y tostadas -->
+  <ellipse cx="280" cy="380" rx="80" ry="30" fill="#E2E8F0"/>
+  <ellipse cx="280" cy="360" rx="60" ry="25" fill="#78350F"/>
+  <path d="M 270,300 Q 285,250 270,220" stroke="#FDE68A" stroke-width="3" fill="none" opacity="0.7"/>
+  <!-- Tostadas al fondo -->
+  <rect x="420" y="300" width="220" height="100" rx="15" fill="#D97706" transform="rotate(-8 420 300)"/>
+  <text x="400" y="540" font-family="'Playfair Display', serif" font-size="26" font-weight="700" fill="#FDE047" text-anchor="middle">Primeras Horas: Desayunos Tradicionales</text>
+</svg>

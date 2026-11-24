@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="whiskyBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2E2012"/><stop offset="100%" stop-color="#120A03"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#whiskyBg)"/>
+  <ellipse cx="400" cy="380" rx="310" ry="160" fill="#F5F5F4" stroke="#D6D3D1" stroke-width="4"/>
+  <!-- Medallones de solomillo -->
+  <ellipse cx="330" cy="360" rx="60" ry="40" fill="#78350F" stroke="#451A03" stroke-width="2"/>
+  <ellipse cx="460" cy="350" rx="65" ry="42" fill="#78350F" stroke="#451A03" stroke-width="2"/>
+  <!-- Salsa brillante al whisky y ajos en camisa -->
+  <ellipse cx="400" cy="380" rx="200" ry="80" fill="#CA8A04" opacity="0.6"/>
+  <circle cx="390" cy="340" r="14" fill="#FEF08A" stroke="#CA8A04" stroke-width="2"/>
+  <circle cx="420" cy="385" r="16" fill="#FEF08A" stroke="#CA8A04" stroke-width="2"/>
+  <!-- Patatas naturales al corte -->
+  <rect x="230" y="380" width="70" height="18" rx="4" fill="#FACC15" transform="rotate(25 230 380)"/>
+  <rect x="500" y="370" width="70" height="18" rx="4" fill="#FACC15" transform="rotate(-20 500 370)"/>
+  <text x="400" y="540" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#F5F5F4" text-anchor="middle">Solomillo al Whisky Sevillano</text>
+</svg>

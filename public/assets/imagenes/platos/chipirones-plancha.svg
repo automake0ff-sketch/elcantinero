@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="chipBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1C2126"/><stop offset="100%" stop-color="#0B0F12"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#chipBg)"/>
+  <ellipse cx="400" cy="380" rx="320" ry="150" fill="#1E293B" stroke="#334155" stroke-width="3"/>
+  <!-- Chipirones dorados a la plancha -->
+  <g transform="translate(300, 270) rotate(-10)">
+    <path d="M 40,60 C 20,40 50,10 90,20 C 130,30 140,70 120,90 C 90,110 50,80 40,60 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+    <!-- Marcas de plancha dorada -->
+    <line x1="60" y1="35" x2="85" y2="40" stroke="#78350F" stroke-width="5" stroke-linecap="round"/>
+    <line x1="75" y1="55" x2="105" y2="60" stroke="#78350F" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(420, 290) rotate(15)">
+    <path d="M 40,60 C 20,40 50,10 90,20 C 130,30 140,70 120,90 C 90,110 50,80 40,60 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+    <line x1="65" y1="38" x2="90" y2="43" stroke="#78350F" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <!-- Aliño de AOVE y perejil picado -->
+  <ellipse cx="400" cy="380" rx="160" ry="50" fill="#65A30D" opacity="0.35"/>
+  <circle cx="370" cy="370" r="3" fill="#15803D"/><circle cx="440" cy="360" r="3" fill="#15803D"/>
+  <text x="400" y="540" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#F5F5F4" text-anchor="middle">Chipirones Frescos a la Plancha</text>
+</svg>

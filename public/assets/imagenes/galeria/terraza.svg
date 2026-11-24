@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/><stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="warmLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+  <!-- Toldo y guirnaldas de luces cálidas -->
+  <path d="M 0,0 L 800,0 L 800,120 C 700,140 500,90 400,120 C 300,150 100,100 0,130 Z" fill="#292524"/>
+  <!-- Luces de terraza de verbena/tapeo -->
+  <circle cx="150" cy="140" r="14" fill="#FDE047" opacity="0.9"/>
+  <circle cx="300" cy="155" r="14" fill="#FDE047" opacity="0.9"/>
+  <circle cx="480" cy="150" r="14" fill="#FDE047" opacity="0.9"/>
+  <circle cx="650" cy="145" r="14" fill="#FDE047" opacity="0.9"/>
+  <!-- Suelo de terraza -->
+  <polygon points="0,380 800,380 800,600 0,600" fill="#1C1917"/>
+  <!-- Mesas de terraza -->
+  <ellipse cx="280" cy="450" rx="90" ry="35" fill="#44403C" stroke="#78716C" stroke-width="2"/>
+  <rect x="274" y="450" width="12" height="110" fill="#292524"/>
+  <ellipse cx="560" cy="450" rx="90" ry="35" fill="#44403C" stroke="#78716C" stroke-width="2"/>
+  <rect x="554" y="450" width="12" height="110" fill="#292524"/>
+  <text x="400" y="550" font-family="'Playfair Display', serif" font-size="26" font-weight="700" fill="#FDE047" text-anchor="middle">Nuestra Terraza al Aire Libre en Sevilla Este</text>
+</svg>

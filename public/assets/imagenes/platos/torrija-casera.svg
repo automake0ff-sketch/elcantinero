@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="torrijaBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2B1D12"/><stop offset="100%" stop-color="#120A03"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#torrijaBg)"/>
+  <ellipse cx="400" cy="390" rx="310" ry="150" fill="#1C1917" stroke="#382E2B" stroke-width="3"/>
+  <!-- Torrija dorada y caramelizada -->
+  <g transform="translate(300, 310) rotate(-8)">
+    <rect x="0" y="0" width="220" height="110" rx="25" fill="#D97706" stroke="#92400E" stroke-width="3"/>
+    <rect x="15" y="15" width="190" height="80" rx="18" fill="#B45309"/>
+    <!-- Glaseado de miel brillante -->
+    <path d="M 20,40 Q 90,20 180,35 Q 190,70 120,80 Z" fill="#FCD34D" opacity="0.6"/>
+    <!-- Rama de canela -->
+    <rect x="170" y="10" width="70" height="14" rx="4" fill="#78350F" transform="rotate(35 170 10)"/>
+  </g>
+  <!-- Bola de helado suave -->
+  <circle cx="280" cy="340" r="45" fill="#FEF3C7" stroke="#FDE68A" stroke-width="2"/>
+  <text x="400" y="540" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#F5F5F4" text-anchor="middle">Torrija Casera con Miel de Azahar</text>
+</svg>

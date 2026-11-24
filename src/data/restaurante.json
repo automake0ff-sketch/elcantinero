@@ -1,0 +1,39 @@
+{
+  "nombre": "El Cantinero Tapas",
+  "lema": "El auténtico sabor del tapeo sevillano",
+  "subtitulo": "Bar de tapas, raciones y desayunos tradicionales en Sevilla Este",
+  "direccion": "C. Periodista Juan Tribuna, 5, 41020 Sevilla",
+  "barrio": "Sevilla Este / Parque Alcosa",
+  "ciudad": "Sevilla",
+  "codigoPostal": "41020",
+  "pais": "España",
+  "telefono": "642 01 90 26",
+  "telefonoHref": "tel:+34642019026",
+  "whatsapp": "34642019026",
+  "whatsappHref": "https://wa.me/34642019026",
+  "instagramUrl": "https://www.instagram.com/elcantinerotapas/",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bar+El+Cantinero+Tapas+Calle+Periodista+Juan+Tribuna+5+41020+Sevilla",
+  "googleShareUrl": "https://share.google/XK6EvAiLEoTqAkeKa",
+  "valoracionGoogle": 4.8,
+  "totalResenasGoogle": 280,
+  "horarios": [
+    { "dias": "Martes a Viernes", "horas": "07:00 - 17:00", "tipo": "Desayunos y Almuerzos" },
+    { "dias": "Sábados y Domingos", "horas": "08:00 - 16:30", "tipo": "Desayunos y Tapeo" },
+    { "dias": "Lunes", "horas": "Cerrado", "tipo": "Descanso del personal" }
+  ],
+  "historia": {
+    "titulo": "Tradición, cercanía y pasión por el buen tapeo",
+    "parrafo1": "En El Cantinero Tapas vivimos la hostelería como se ha vivido siempre en Sevilla: con el calor de una atención familiar, el aroma a café y pan tostado al amanecer, y el bullicio acogedor de quien sabe que va a comer bien y a gusto.",
+    "parrafo2": "Situados en la Calle Periodista Juan Tribuna, en el corazón de Sevilla Este, nuestro compromiso diario es ofrecer platos generosos, recetas de toda la vida y una cuidada selección de tapas y raciones donde el producto y el cariño en los fogones marcan la diferencia.",
+    "parrafo3": "Tanto si vienes a comenzar el día con nuestras famosas tostadas de pan de semillas como si vienes a compartir unas croquetas cremosas y un tapeo con amigos o familia, en El Cantinero tienes siempre tu casa."
+  },
+  "servicios": {
+    "reservasActivas": false,
+    "pedidosWhatsappActivos": false,
+    "terrazaExterior": true,
+    "desayunos": true,
+    "accesible": true,
+    "wifiClientes": true
+  },
+  "avisoDatos": "Precios y disponibilidad sujetos a confirmación diaria en el local."
+}

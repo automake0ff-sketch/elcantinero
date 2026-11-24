@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="barBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1917"/><stop offset="100%" stop-color="#0C0A09"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#barBg)"/>
+  <!-- Barra de madera maciza barnizada -->
+  <polygon points="0,340 800,340 800,420 0,420" fill="#78350F" stroke="#451A03" stroke-width="3"/>
+  <polygon points="0,420 800,420 800,600 0,600" fill="#451A03"/>
+  <!-- Vitrina expositora de tapas frías con luz interior -->
+  <rect x="180" y="240" width="440" height="100" rx="10" fill="#FEF08A" opacity="0.25" stroke="#FACC15" stroke-width="2"/>
+  <ellipse cx="280" cy="300" rx="40" ry="15" fill="#DC2626"/>
+  <ellipse cx="400" cy="300" rx="40" ry="15" fill="#D97706"/>
+  <ellipse cx="520" cy="300" rx="40" ry="15" fill="#CA8A04"/>
+  <!-- Grifo de cerveza fría -->
+  <path d="M 120,340 L 120,240 Q 140,240 140,270 L 140,340 Z" fill="#94A3B8"/>
+  <text x="400" y="550" font-family="'Playfair Display', serif" font-size="26" font-weight="700" fill="#FDE047" text-anchor="middle">La Barra de Tapas: Encuentro y Tradición</text>
+</svg>

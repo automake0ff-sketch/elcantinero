@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="ensBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#252422"/><stop offset="100%" stop-color="#100F0E"/>
+    </radialGradient>
+    <radialGradient id="mayoDome" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FEF9C3"/><stop offset="60%" stop-color="#FDE047"/><stop offset="100%" stop-color="#CA8A04"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ensBg)"/>
+  <!-- Plato hondo tradicional blanco aljez -->
+  <ellipse cx="400" cy="380" rx="310" ry="160" fill="#F5F5F4" stroke="#E7E5E4" stroke-width="4"/>
+  <ellipse cx="400" cy="375" rx="260" ry="130" fill="#E7E5E4"/>
+  <!-- Cúpula de ensaladilla rusa casera -->
+  <ellipse cx="400" cy="350" rx="210" ry="105" fill="url(#mayoDome)"/>
+  <!-- Tropezones de atún, zanahoria y guisante -->
+  <circle cx="340" cy="330" r="9" fill="#EA580C"/>
+  <circle cx="430" cy="320" r="10" fill="#15803D"/>
+  <circle cx="470" cy="350" r="8" fill="#EA580C"/>
+  <circle cx="370" cy="365" r="9" fill="#15803D"/>
+  <path d="M 390,330 Q 420,325 410,345 Z" fill="#B91C1C" opacity="0.9"/>
+  <!-- Huevo hilado/rallado y pimiento morrón por encima -->
+  <path d="M 340,305 Q 400,290 460,310" stroke="#DC2626" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <ellipse cx="400" cy="305" rx="50" ry="20" fill="#FEF08A" opacity="0.9"/>
+  <!-- Regañás sevillanas crujientes al lado -->
+  <rect x="520" y="320" width="110" height="50" rx="8" fill="#D97706" transform="rotate(-15 520 320)" stroke="#B45309" stroke-width="2"/>
+  <text x="400" y="540" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#F5F5F4" text-anchor="middle">Ensaladilla Rusa Sevillana con Regañás</text>
+</svg>
