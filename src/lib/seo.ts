@@ -1,5 +1,4 @@
 import restauranteData from '@/data/restaurante.json';
-import cartaData from '@/data/carta.json';
 
 export function getRestaurantJsonLd() {
   return {

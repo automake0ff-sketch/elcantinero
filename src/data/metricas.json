@@ -1,0 +1,13 @@
+{
+  "eventos": [
+    { "tipo": "visita_home", "fecha": "2026-11-20T10:00:00Z" },
+    { "tipo": "visita_home", "fecha": "2026-11-21T11:00:00Z" },
+    { "tipo": "visita_carta", "fecha": "2026-11-21T11:05:00Z" },
+    { "tipo": "clic_llamar", "fecha": "2026-11-21T12:00:00Z" },
+    { "tipo": "clic_maps", "fecha": "2026-11-22T13:00:00Z" },
+    { "tipo": "visita_carta", "fecha": "2026-11-23T10:30:00Z" },
+    { "tipo": "escaneo_qr", "entidadId": "1", "fecha": "2026-11-23T13:45:00Z" },
+    { "tipo": "clic_instagram", "fecha": "2026-11-24T09:00:00Z" },
+    { "tipo": "clic_tiktok", "fecha": "2026-11-24T10:00:00Z" }
+  ]
+}

@@ -1,7 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { validateAdminCredentials, createSessionToken } from '@/lib/auth';
+import { checkRateLimit, registerFailedAttempt, resetRateLimit } from '@/lib/rate-limit';
 
 export async function POST(req: NextRequest) {
+  // Obtener IP del cliente para control de intentos
+  const forwardedFor = req.headers.get('x-forwarded-for');
+  const ip = forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1';
+
+  // Verificar rate limiting
+  const rateLimit = checkRateLimit(ip);
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      {
+        ok: false,
+        error: `Demasiados intentos erróneos. Acceso temporalmente bloqueado por seguridad. Inténtelo de nuevo en ${rateLimit.retryAfterSec} segundos.`,
+      },
+      { status: 429 }
+    );
+  }
+
   try {
     const { username, password } = await req.json();
 
@@ -15,11 +32,20 @@ export async function POST(req: NextRequest) {
     const check = validateAdminCredentials(username, password);
 
     if (!check.valid) {
+      const failed = registerFailedAttempt(ip);
+      const remainingMsg =
+        failed.remainingAttempts > 0
+          ? ` Le quedan ${failed.remainingAttempts} intento(s) antes del bloqueo temporal.`
+          : ' Cuenta temporalmente bloqueada por seguridad.';
+
       return NextResponse.json(
-        { ok: false, error: 'Credenciales incorrectas. Verifique usuario y clave.' },
-        { status: 401 }
+        { ok: false, error: (check.error || 'Credenciales incorrectas.') + remainingMsg },
+        { status: check.error?.startsWith('CONFIG_ERROR') ? 503 : 401 }
       );
     }
+
+    // Login exitoso: resetear contador de rate limit
+    resetRateLimit(ip);
 
     const sessionToken = await createSessionToken({
       username,
@@ -42,9 +68,10 @@ export async function POST(req: NextRequest) {
     });
 
     return response;
-  } catch (error) {
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Error procesando autenticación';
     return NextResponse.json(
-      { ok: false, error: 'Error procesando autenticación' },
+      { ok: false, error: message.startsWith('ADMIN_JWT_SECRET_MISSING') ? 'Error de configuración de seguridad en el servidor.' : 'Error al procesar la solicitud.' },
       { status: 500 }
     );
   }

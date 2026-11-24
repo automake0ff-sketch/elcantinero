@@ -3,6 +3,7 @@
 import React from 'react';
 import { MapPin, Phone, Clock, ExternalLink, Navigation } from 'lucide-react';
 import InstagramIcon from '@/components/ui/InstagramIcon';
+import TikTokIcon from '@/components/ui/TikTokIcon';
 import restauranteData from '@/data/restaurante.json';
 
 export default function ContactoSeccion() {
@@ -73,24 +74,33 @@ export default function ContactoSeccion() {
             </div>
 
             {/* Botones de acción directa */}
-            <div className="pt-4 flex flex-col sm:flex-row gap-3">
+            <div className="pt-4 flex flex-col sm:flex-row gap-2.5">
               <a
                 href={restauranteData.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#E5A93C] to-[#C98A26] text-[#0E0D0B] font-extrabold text-sm shadow-md hover:scale-105 active:scale-95 transition-all text-center"
+                className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-gradient-to-r from-[#E5A93C] to-[#C98A26] text-[#0E0D0B] font-extrabold text-xs shadow-md hover:scale-105 active:scale-95 transition-all text-center"
               >
-                <Navigation className="w-4 h-4 fill-current" />
-                Cómo llegar en Google Maps
+                <Navigation className="w-3.5 h-3.5 fill-current" />
+                Cómo llegar
               </a>
               <a
                 href={restauranteData.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#25221E] hover:bg-[#2E2A25] text-[#FDFCF7] border border-white/10 font-semibold text-sm transition-colors"
+                className="inline-flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-[#25221E] hover:bg-[#2E2A25] text-[#FDFCF7] border border-white/10 font-semibold text-xs transition-colors"
               >
-                <InstagramIcon className="w-4 h-4 text-[#E5A93C]" />
+                <InstagramIcon className="w-3.5 h-3.5 text-[#E5A93C]" />
                 Instagram
+              </a>
+              <a
+                href={restauranteData.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-[#25221E] hover:bg-[#2E2A25] text-[#FDFCF7] border border-white/10 font-semibold text-xs transition-colors"
+              >
+                <TikTokIcon className="w-3.5 h-3.5 text-[#E5A93C]" />
+                TikTok
               </a>
             </div>
           </div>

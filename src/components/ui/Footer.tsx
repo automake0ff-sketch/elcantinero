@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Phone, MapPin, Clock, Star, Play, Lock, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, MapPin, Clock, Star, Play, Lock } from 'lucide-react';
 import InstagramIcon from '@/components/ui/InstagramIcon';
+import TikTokIcon from '@/components/ui/TikTokIcon';
 import restauranteData from '@/data/restaurante.json';
 
 export default function Footer() {
@@ -129,15 +131,24 @@ export default function Footer() {
                   {restauranteData.telefono}
                 </a>
               </p>
-              <div className="pt-2 flex items-center gap-3">
+              <div className="pt-2 flex flex-wrap items-center gap-2">
                 <a
                   href={restauranteData.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#181613] hover:bg-[#25221E] text-xs font-semibold text-[#FDFCF7] border border-white/10 hover:border-[#E5A93C] transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#181613] hover:bg-[#25221E] text-xs font-semibold text-[#FDFCF7] border border-white/10 hover:border-[#E5A93C] transition-colors"
                 >
-                  <InstagramIcon className="w-4 h-4 text-[#E5A93C]" />
-                  @elcantinerotapas
+                  <InstagramIcon className="w-3.5 h-3.5 text-[#E5A93C]" />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href={restauranteData.tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#181613] hover:bg-[#25221E] text-xs font-semibold text-[#FDFCF7] border border-white/10 hover:border-[#E5A93C] transition-colors"
+                >
+                  <TikTokIcon className="w-3.5 h-3.5 text-[#E5A93C]" />
+                  <span>TikTok</span>
                 </a>
               </div>
             </div>

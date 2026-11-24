@@ -1,0 +1,14 @@
+[
+  {
+    "id": "promo-desayuno-completo",
+    "titulo": "Desayuno Especial El Cantinero",
+    "descripcion": "Tostada de pan de semillas con salmorejo casero y jamón, acompañada de café con leche recién molido.",
+    "imagen": "/assets/imagenes/platos/desayuno-salmorejo.svg",
+    "fechaInicio": "2026-01-01T07:00:00Z",
+    "fechaFin": "2026-12-31T12:00:00Z",
+    "estado": "activa",
+    "destacadaPortada": true,
+    "condiciones": "Válido de martes a domingo de 07:00 a 11:30 en barra y terraza.",
+    "orden": 1
+  }
+]

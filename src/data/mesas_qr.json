@@ -1,0 +1,7 @@
+[
+  { "id": "mesa-general", "numeroMesa": 0, "nombre": "QR General Carta", "activa": true, "totalEscaneos": 42, "fechaCreacion": "2026-01-01T00:00:00Z" },
+  { "id": "mesa-1", "numeroMesa": 1, "nombre": "Mesa 1 (Terraza Exterior)", "activa": true, "totalEscaneos": 18, "fechaCreacion": "2026-01-01T00:00:00Z" },
+  { "id": "mesa-2", "numeroMesa": 2, "nombre": "Mesa 2 (Terraza Exterior)", "activa": true, "totalEscaneos": 25, "fechaCreacion": "2026-01-01T00:00:00Z" },
+  { "id": "mesa-3", "numeroMesa": 3, "nombre": "Mesa 3 (Barra Alta)", "activa": true, "totalEscaneos": 12, "fechaCreacion": "2026-01-01T00:00:00Z" },
+  { "id": "mesa-4", "numeroMesa": 4, "nombre": "Mesa 4 (Salón Comedor)", "activa": true, "totalEscaneos": 9, "fechaCreacion": "2026-01-01T00:00:00Z" }
+]

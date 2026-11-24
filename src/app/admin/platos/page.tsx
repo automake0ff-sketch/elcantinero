@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -8,26 +8,25 @@ import {
   Plus,
   Edit2,
   Trash2,
-  Check,
   X,
-  AlertCircle,
-  Sparkles,
-  Save,
   Search,
-  Eye,
 } from 'lucide-react';
-import { Plato, CategoriaPlato, AlergenoItem } from '@/lib/types';
+import { Plato } from '@/lib/types';
 import cartaDataRaw from '@/data/carta.json';
 
 export default function AdminPlatosPage() {
-  const [platos, setPlatos] = useState<Plato[]>(cartaDataRaw.platos);
+  const [platos, setPlatos] = useState<Plato[]>(() => {
+    return cartaDataRaw.platos.map((p) => ({
+      ...p,
+      estado: (p as { estado?: 'publicado' | 'borrador' }).estado || 'publicado',
+    }));
+  });
   const [searchTerm, setSearchTerm] = useState('');
   const [editingPlato, setEditingPlato] = useState<Plato | null>(null);
   const [isCreating, setIsCreating] = useState(false);
   const [feedbackMsg, setFeedbackMsg] = useState<{ text: string; error?: boolean } | null>(null);
 
   const categorias = cartaDataRaw.categorias.filter((c) => c.id !== 'todas');
-  const alergenosCatalogo = cartaDataRaw.alergenosCatalogo;
 
   // Toggle disponibilidad rápida
   const handleToggleDisponible = async (plato: Plato) => {
@@ -139,6 +138,7 @@ export default function AdminPlatosPage() {
                 precioRacion: null,
                 destacado: false,
                 disponible: true,
+                estado: 'publicado',
                 imagen: '/assets/imagenes/platos/croquetas-jamon.svg',
                 alergenos: [],
                 etiquetas: ['Casero'],

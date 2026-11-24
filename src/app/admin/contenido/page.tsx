@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Save, CheckCircle2, Phone, MapPin, Clock, FileText, Globe } from 'lucide-react';
+import { ArrowLeft, Save, CheckCircle2, Phone, Clock, FileText } from 'lucide-react';
 import restauranteDataRaw from '@/data/restaurante.json';
 import { DatosRestaurante } from '@/lib/types';
 

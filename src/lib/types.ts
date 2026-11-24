@@ -20,6 +20,11 @@ export interface Servicios {
   wifiClientes: boolean;
 }
 
+export interface RedesSociales {
+  instagramUrl: string;
+  tiktokUrl: string;
+}
+
 export interface DatosRestaurante {
   nombre: string;
   lema: string;
@@ -34,6 +39,7 @@ export interface DatosRestaurante {
   whatsapp: string;
   whatsappHref: string;
   instagramUrl: string;
+  tiktokUrl: string;
   googleMapsUrl: string;
   googleShareUrl: string;
   valoracionGoogle: number;
@@ -65,6 +71,7 @@ export interface Plato {
   precioRacion: number | null;
   destacado: boolean;
   disponible: boolean;
+  estado: 'publicado' | 'borrador';
   imagen: string;
   alergenos: string[];
   etiquetas: string[];
@@ -78,4 +85,57 @@ export interface CartaData {
   categorias: CategoriaPlato[];
   alergenosCatalogo: AlergenoItem[];
   platos: Plato[];
+}
+
+export interface Promocion {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  imagen: string;
+  fechaInicio: string;
+  fechaFin: string;
+  estado: 'activa' | 'borrador' | 'pausada';
+  destacadaPortada: boolean;
+  condiciones: string;
+  orden: number;
+}
+
+export interface MesaQR {
+  id: string;
+  numeroMesa: number;
+  nombre: string;
+  activa: boolean;
+  totalEscaneos: number;
+  fechaCreacion: string;
+}
+
+export type TipoEventoMetrica =
+  | 'visita_home'
+  | 'visita_carta'
+  | 'clic_llamar'
+  | 'clic_maps'
+  | 'clic_instagram'
+  | 'clic_tiktok'
+  | 'escaneo_qr'
+  | 'consulta_plato';
+
+export interface EventoMetrica {
+  id?: string;
+  tipo: TipoEventoMetrica;
+  entidadId?: string;
+  metadata?: Record<string, string | number>;
+  fecha: string;
+}
+
+export interface ResumenEstadisticas {
+  totalVisitasHome: number;
+  totalVisitasCarta: number;
+  totalClicsLlamar: number;
+  totalClicsMaps: number;
+  totalClicsInstagram: number;
+  totalClicsTikTok: number;
+  totalEscaneosQR: number;
+  platosMasConsultados: { id: string; nombre: string; consultas: number }[];
+  escaneosPorMesa: { numeroMesa: number; nombre: string; escaneos: number }[];
+  periodoDias: number;
 }

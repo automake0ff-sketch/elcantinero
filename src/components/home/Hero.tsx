@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Utensils, MapPin, Phone, Star, Sparkles, ChevronRight, Award } from 'lucide-react';
+import { Utensils, MapPin, Phone, Star, ChevronRight, Award } from 'lucide-react';
 import restauranteData from '@/data/restaurante.json';
 
 export default function Hero() {

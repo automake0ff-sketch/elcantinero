@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { X, Award, ShieldAlert, CheckCircle2, Share2, Sparkles } from 'lucide-react';
+import { X, ShieldAlert, CheckCircle2, Share2 } from 'lucide-react';
 import { Plato, AlergenoItem } from '@/lib/types';
 
 interface PlatoModalProps {

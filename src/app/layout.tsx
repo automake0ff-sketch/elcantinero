@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { getRestaurantJsonLd } from '@/lib/seo';
-import restauranteData from '@/data/restaurante.json';
 
 export const viewport: Viewport = {
   themeColor: '#0E0D0B',

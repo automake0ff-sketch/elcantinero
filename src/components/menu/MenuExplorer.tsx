@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { Search, Utensils, X, Info, Sparkles, Filter, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Search, Utensils, X } from 'lucide-react';
 import { Plato, CategoriaPlato, AlergenoItem } from '@/lib/types';
 import cartaData from '@/data/carta.json';
 import PlatoModal from './PlatoModal';

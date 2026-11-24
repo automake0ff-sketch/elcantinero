@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Box, Sparkles } from 'lucide-react';
+import { Box } from 'lucide-react';
 
 interface Visor3DModelViewerProps {
   nombrePlato: string;
@@ -20,7 +20,9 @@ export default function Visor3DModelViewer({
   nombrePlato,
   modelo3d,
 }: Visor3DModelViewerProps) {
-  const [modelViewerLoaded, setModelViewerLoaded] = useState(false);
+  const [modelViewerLoaded, setModelViewerLoaded] = useState(() => {
+    return typeof window !== 'undefined' && Boolean(customElements.get('model-viewer'));
+  });
 
   useEffect(() => {
     // Si no hay modelo 3D real configurado, no cargamos el script ni mostramos nada
@@ -35,8 +37,6 @@ export default function Visor3DModelViewer({
       script.src = 'https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js';
       script.onload = () => setModelViewerLoaded(true);
       document.head.appendChild(script);
-    } else {
-      setModelViewerLoaded(true);
     }
   }, [modelo3d]);
 

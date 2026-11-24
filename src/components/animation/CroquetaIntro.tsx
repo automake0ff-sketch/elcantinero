@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Sparkles, ArrowRight, VolumeX } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 interface Particle {
   x: number;
@@ -26,7 +26,6 @@ export default function CroquetaIntro({ onComplete, forceShow = false }: Croquet
   const [isVisible, setIsVisible] = useState(false);
   const [phase, setPhase] = useState<'appear' | 'cracking' | 'burst' | 'brand' | 'finished'>('appear');
   const [brandOpacity, setBrandOpacity] = useState(0);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animFrameRef = useRef<number | null>(null);
@@ -52,9 +51,6 @@ export default function CroquetaIntro({ onComplete, forceShow = false }: Croquet
 
   // Check sessionStorage and prefers-reduced-motion
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    setIsReducedMotion(reduced);
-
     let alreadySeen = false;
     try {
       alreadySeen = sessionStorage.getItem('cantinero_intro_seen') === 'true';
@@ -62,19 +58,18 @@ export default function CroquetaIntro({ onComplete, forceShow = false }: Croquet
       alreadySeen = false;
     }
 
-    if (alreadySeen && !forceShow) {
-      setIsVisible(false);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if ((alreadySeen || reduced) && !forceShow) {
       if (onComplete) onComplete();
       return;
     }
 
-    if (reduced && !forceShow) {
-      setIsVisible(false);
-      if (onComplete) onComplete();
-      return;
-    }
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 10);
 
-    setIsVisible(true);
+    return () => clearTimeout(timer);
   }, [forceShow, onComplete]);
 
   // Spawn culinary particles (panko crumbs, creamy droplets, aromatic glow)

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Lock, User, KeyRound, AlertCircle, ArrowLeft, ShieldCheck } from 'lucide-react';
+import { User, KeyRound, AlertCircle, ArrowLeft, ShieldCheck } from 'lucide-react';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -76,6 +76,9 @@ export default function AdminLoginPage() {
           )}
 
           <form onSubmit={handleLogin} className="space-y-4">
+            <div className="p-3 rounded-xl bg-[#E5A93C]/10 border border-[#E5A93C]/30 text-xs text-[#E5A93C] text-center font-medium">
+              ✨ <strong>Modo Demostración</strong> · Usuario: <code className="bg-black/40 px-1.5 py-0.5 rounded text-white font-mono">admin</code> · Clave: <code className="bg-black/40 px-1.5 py-0.5 rounded text-white font-mono">Cantinero2026!</code>
+            </div>
             <div>
               <label className="block text-xs font-semibold text-[#A8A29E] uppercase tracking-wider mb-1.5">
                 Usuario

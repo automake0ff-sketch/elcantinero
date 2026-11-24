@@ -8,14 +8,17 @@ export interface UserSession {
 }
 
 const COOKIE_NAME = 'cantinero_admin_session';
-const SECRET_KEY = process.env.ADMIN_JWT_SECRET || 'cantinero_sevilla_secret_key_2026_super_safe_token';
 
-// Simple and secure HMAC SHA-256 token signer using Web Crypto
+function getSecretKey(): string {
+  return process.env.ADMIN_JWT_SECRET || 'cantinero_demo_jwt_secret_token_2026_sevilla_este';
+}
+
 async function getCryptoKey() {
   const enc = new TextEncoder();
+  const secret = getSecretKey();
   return crypto.subtle.importKey(
     'raw',
-    enc.encode(SECRET_KEY),
+    enc.encode(secret),
     { name: 'HMAC', hash: 'SHA-256' },
     false,
     ['sign', 'verify']
@@ -53,7 +56,7 @@ export async function verifySessionToken(token: string): Promise<UserSession | n
     const payloadStr = Buffer.from(payloadB64, 'base64url').toString('utf-8');
     const user = JSON.parse(payloadStr) as UserSession;
 
-    // Expire after 7 days
+    // Expira a los 7 días
     const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
     if (Date.now() - user.loginTime > sevenDaysMs) {
       return null;
@@ -66,27 +69,47 @@ export async function verifySessionToken(token: string): Promise<UserSession | n
 }
 
 export async function getCurrentAdminUser(): Promise<UserSession | null> {
-  const cookieStore = await cookies();
-  const token = cookieStore.get(COOKIE_NAME)?.value;
-  if (!token) return null;
-  return verifySessionToken(token);
+  try {
+    const cookieStore = await cookies();
+    const token = cookieStore.get(COOKIE_NAME)?.value;
+    if (!token) return null;
+    return verifySessionToken(token);
+  } catch {
+    return null;
+  }
 }
 
-export function validateAdminCredentials(user: string, pass: string): { valid: boolean; role: 'propietario' | 'editor'; name: string } {
-  // Las credenciales pueden sobreescribirse mediante variables de entorno en producción
+export function validateAdminCredentials(
+  user: string,
+  pass: string
+): { valid: boolean; role: 'propietario' | 'editor'; name: string; error?: string } {
   const ownerUser = process.env.ADMIN_OWNER_USER || 'admin';
-  const ownerPass = process.env.ADMIN_OWNER_PASS || 'CantineroTapas2026!';
-
+  const ownerPass = process.env.ADMIN_OWNER_PASS || 'Cantinero2026!';
   const editorUser = process.env.ADMIN_EDITOR_USER || 'editor';
   const editorPass = process.env.ADMIN_EDITOR_PASS || 'CantineroEditor2026!';
 
+  // Verificación Propietario
   if (user === ownerUser && pass === ownerPass) {
     return { valid: true, role: 'propietario', name: 'Gerencia El Cantinero' };
   }
 
+  // Verificación Editor
   if (user === editorUser && pass === editorPass) {
     return { valid: true, role: 'editor', name: 'Equipo de Sala' };
   }
 
-  return { valid: false, role: 'editor', name: '' };
+  return { valid: false, role: 'editor', name: '', error: 'Credenciales no válidas.' };
+}
+
+export function requireRole(
+  user: UserSession | null,
+  allowedRoles: ('propietario' | 'editor')[]
+): { authorized: boolean; reason?: string } {
+  if (!user) {
+    return { authorized: false, reason: 'No autenticado' };
+  }
+  if (!allowedRoles.includes(user.role)) {
+    return { authorized: false, reason: `Acción reservada al rol ${allowedRoles.join(', ')}` };
+  }
+  return { authorized: true };
 }

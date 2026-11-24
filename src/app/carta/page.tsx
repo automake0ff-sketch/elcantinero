@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, Phone, MapPin, Sparkles, Utensils } from 'lucide-react';
+import { ArrowLeft, Phone, MapPin, Utensils } from 'lucide-react';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import FloatingContactBar from '@/components/ui/FloatingContactBar';
 import MenuExplorer from '@/components/menu/MenuExplorer';
+import CartaMesaBanner from '@/components/menu/CartaMesaBanner';
 import restauranteData from '@/data/restaurante.json';
 
 export const metadata: Metadata = {
@@ -26,6 +27,11 @@ export default function CartaPage() {
 
       <main className="flex-1 pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Banner de Mesa QR (Si se accede desde código QR de mesa) */}
+          <Suspense fallback={null}>
+            <CartaMesaBanner />
+          </Suspense>
+
           {/* Cabecera de la carta */}
           <div className="mb-8 space-y-4">
             <Link

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, Menu as MenuIcon, X, Utensils, Clock, Lock } from 'lucide-react';
+import { Phone, MapPin, Menu as MenuIcon, X, Utensils, Lock } from 'lucide-react';
 import restauranteData from '@/data/restaurante.json';
 
 export default function Navbar() {
